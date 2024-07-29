@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package lovelydayss.raft_node;
+
+option go_package = "github.com/lovelydayss/protocol/raft_node/version1";
+
+import "trpc/api/annotations.proto";
+
+// raft 节点服务
+service RaftService {
+
+    // 内部服务
+  rpc empty(emptyRequest) returns (emptyResponse) {
+    option (trpc.api.http) = {
+      get : "/v1/empty"
+      body : "*"
+    };
+  }
+
+
+
+
+    // 外部服务
+
+
+}
+
+message emptyRequest {
+}
+
+message emptyResponse {
+}
